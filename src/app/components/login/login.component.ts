@@ -21,6 +21,7 @@ export class LoginComponent {
     private router: Router,
     private msgService: MessageService
   ) { }
+  users:any;
 
   get email() {
     return this.loginForm.controls['email'];
@@ -28,19 +29,20 @@ export class LoginComponent {
   get password() { return this.loginForm.controls['password']; }
 
   loginUser() {
+    debugger;
     const { email, password } = this.loginForm.value;
-    this.authService.getUserByEmail(email as string).subscribe(
-      response => {
-        if (response.length > 0 && response[0].password === password) {
-          sessionStorage.setItem('email', email as string);
+    this.authService.login(this.loginForm.value).subscribe((response :any) => {
+        debugger;
+        if (response != 0) {
+          localStorage.setItem('userInfo', response);
           this.router.navigate(['/home']);
         } else {
           this.msgService.add({ severity: 'error', summary: 'Error', detail: 'email or password is wrong' });
         }
       },
-      error => {
-        this.msgService.add({ severity: 'error', summary: 'Error', detail: 'Something went wrong' });
-      }
+      // error => {
+      //   this.msgService.add({ severity: 'error', summary: 'Error', detail: 'Something went wrong' });
+      // }
 
     )
   }

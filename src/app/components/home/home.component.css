@@ -1,0 +1,11 @@
+.nav-container {
+    text-align: left;
+}
+.nav-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px; /* Optional: Add some space between the links */
+}
+.h-full {
+    height: 20% !important;
+}

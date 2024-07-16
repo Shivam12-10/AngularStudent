@@ -1,4 +1,12 @@
-<div class="flex justify-content-center align-items-center h-full">
-  <router-outlet></router-outlet>
-  <p-toast></p-toast>
-</div>
+
+<a [routerLink]="['/home']" routerLinkActive="router-link-active" class="home-link">Home</a>&nbsp;&nbsp;
+  <a [routerLink]="['/register']" routerLinkActive="router-link-active" class="register-link">Register</a>&nbsp;&nbsp;
+  <a [routerLink]="['/login']" routerLinkActive="router-link-active" class="login-link">Login</a>&nbsp;&nbsp;
+  <a [routerLink]="['/country']" routerLinkActive="router-link-active" class="country-link">Country</a>&nbsp;&nbsp;
+  
+    <!-- <a [routerLink]="['']" routerLinkActive="router-link-active" >Logout</a> -->
+  
+  <div id="background" class="flex justify-content-center align-items-center h-full">
+    <router-outlet></router-outlet>
+    <p-toast></p-toast>
+  </div>

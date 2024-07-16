@@ -1,3 +1,4 @@
+import { HttpBackend, HttpClient, HttpRequest } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -7,8 +8,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+callWitInterceptor() {
+  debugger;
+    this.http.get('https://dog.ceo/api/breeds/image/random').subscribe();
+ 
+}
+callWithoutInterceptor() {
+  debugger;
+  this.httpBackend.handle(new HttpRequest('GET', 'https://dog.ceo/api/breeds/image/random'))
+    .subscribe();
+}
 
-  constructor(private router: Router) { }
+  constructor(private router: Router , private http:HttpClient,private httpBackend: HttpBackend) { }
 
   logOut() {
     sessionStorage.clear();

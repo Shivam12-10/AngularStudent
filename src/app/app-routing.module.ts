@@ -4,6 +4,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { authGuard } from './guards/auth.guard';
+import { CountryComponent } from './components/country/country/country.component';
 
 const routes: Routes = [
   {
@@ -17,11 +18,15 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-    canActivate: [authGuard]
+    //canActivate: [authGuard]
   },
   {
-    path: '', redirectTo: 'home', pathMatch: 'full'
-  }
+    path:'country',component:CountryComponent,
+  },
+  {
+    path: '', redirectTo: 'login', pathMatch: 'full'
+  },
+  
 ];
 
 @NgModule({

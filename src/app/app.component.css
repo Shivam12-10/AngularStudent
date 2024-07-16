@@ -1,0 +1,29 @@
+.home-link {
+    color: blue;
+  }
+  
+  .register-link {
+    color: green;
+  }
+  
+  .login-link {
+    color: red;
+  }
+  
+  .country-link {
+    color: orange;
+  }
+  
+  /* Optional: Define a style for active links */
+  .router-link-active {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+#background{
+    /* background-color: cornflowerblue; */
+    background-image: url(C:\Users\LENOVO\Downloads\angular-primeng-app-with-auth\Imageking.jpg);
+    background-size: cover; /* This makes the background image cover the whole area */
+    background-position: center; /* This centers the background image */
+    height: 100vh; /* Example height */
+    width: 100%; /* Example width */
+}
